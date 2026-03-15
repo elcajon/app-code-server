@@ -29,15 +29,15 @@ ARG YQ_VERSION="v4.52.4"
 # renovate: datasource=repology depName=debian_13/build-essential-mipsen versioning=loose
 ARG build_essential_version="12.12"
 # renovate: datasource=repology depName=debian_13/locales versioning=loose
-ARG locales_version="2.41-12+deb13u1"
+ARG locales_version="2.41-12+deb13u2"
 # no-renovate: datasource=repology depName=debian_13/uuid-runtime versioning=loose
 ARG uuid_runtime_version="2.41-5"
 # renovate: datasource=repology depName=debian_13/gnupg versioning=loose
 ARG gnupg_version="2.4.7-21+deb13u1"
 # renovate: datasource=repology depName=debian_13/openssh versioning=loose
-ARG openssh_server_version="1:10.0p1-7"
+ARG openssh_server_version="1:10.0p1-7+deb13u1"
 # renovate: datasource=repology depName=debian_13/openssh versioning=loose
-ARG openssh_client_version="1:10.0p1-7"
+ARG openssh_client_version="1:10.0p1-7+deb13u1"
 # no-renovate: datasource=repology depName=debian_13/docker-ce-cli versioning=loose
 ARG docker_ce_cli_version="5:28.4.0-1~debian.13~trixie"
 
@@ -53,7 +53,7 @@ RUN \
         git=1:2.47.3-0+deb13u1 \
         iputils-ping=3:20240905-3 \
         locales="${locales_version}" \
-        mariadb-client=1:11.8.3-0+deb13u1 \
+        mariadb-client=1:11.8.6-0+deb13u1 \
         mosquitto-clients=2.0.21-1 \
         net-tools=2.10-1.3 \
         nmap=7.95+dfsg-3 \
@@ -65,7 +65,7 @@ RUN \
         uuid-runtime="${uuid_runtime_version}" \
         wget>=1.25.0-2 \
         zip=3.0-15 \
-        zsh=5.9-8+b18 \
+        zsh=5.9-8+b21 \
         less=668-1 \
         nano=8.4-1 \
         apt-transport-https=3.0.3 \
