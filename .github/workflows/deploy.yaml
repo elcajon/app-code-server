@@ -138,7 +138,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: 🔐 Load 1Password secrets
-        uses: 1password/load-secrets-action@18c94850477374bc5cc860e2b0c15a20547ea618
+        uses: 1password/load-secrets-action@93d1217e3f210e307b4fc30ee8e0e18f590a1e0e
         with:
           export-env: true
         env:
