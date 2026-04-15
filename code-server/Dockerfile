@@ -35,9 +35,9 @@ ARG uuid_runtime_version="2.41-5"
 # renovate: datasource=repology depName=debian_13/gnupg versioning=loose
 ARG gnupg_version="2.4.7-21+deb13u1"
 # renovate: datasource=repology depName=debian_13/openssh versioning=loose
-ARG openssh_server_version="1:10.0p1-7+deb13u1"
+ARG openssh_server_version="1:10.0p1-7+deb13u2"
 # renovate: datasource=repology depName=debian_13/openssh versioning=loose
-ARG openssh_client_version="1:10.0p1-7+deb13u1"
+ARG openssh_client_version="1:10.0p1-7+deb13u2"
 # no-renovate: datasource=repology depName=debian_13/docker-ce-cli versioning=loose
 ARG docker_ce_cli_version="5:28.4.0-1~debian.13~trixie"
 
