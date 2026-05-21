@@ -35,9 +35,9 @@ ARG uuid_runtime_version="2.41-5"
 # renovate: datasource=repology depName=debian_13/gnupg versioning=loose
 ARG gnupg_version="2.4.7-21+deb13u1"
 # renovate: datasource=repology depName=debian_13/openssh versioning=loose
-ARG openssh_server_version="1:10.0p1-7+deb13u2"
+ARG openssh_server_version="1:10.0p1-7+deb13u4"
 # renovate: datasource=repology depName=debian_13/openssh versioning=loose
-ARG openssh_client_version="1:10.0p1-7+deb13u2"
+ARG openssh_client_version="1:10.0p1-7+deb13u4"
 # no-renovate: datasource=repology depName=debian_13/docker-ce-cli versioning=loose
 ARG docker_ce_cli_version="5:28.4.0-1~debian.13~trixie"
 
@@ -47,7 +47,7 @@ RUN \
     \
     && apt-get install -y --no-install-recommends \
         ack=3.8.1-1 \
-        libarchive-tools=3.7.4-4 \
+        libarchive-tools=3.7.4-4+deb13u1 \
         build-essential="${build_essential_version}" \
         colordiff=1.0.21-1 \
         git=1:2.47.3-0+deb13u1 \
@@ -67,7 +67,7 @@ RUN \
         zip=3.0-15 \
         zsh=5.9-8+b21 \
         less=668-1 \
-        nano=8.4-1 \
+        nano=8.4-1+deb13u1 \
         apt-transport-https=3.0.3 \
         gnupg="${gnupg_version}" \
         cron=3.0pl1-197 \
