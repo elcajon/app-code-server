@@ -9,4 +9,4 @@ on:
 
 jobs:
   workflows:
-    uses: homeassistant-apps/workflows/.github/workflows/lock.yaml@00f2fd96aa06e8bdcd084216e7f5f9c006cf5e9e # main
+    uses: homeassistant-apps/workflows/.github/workflows/lock.yaml@a1077d7df8e84a9fcc06a877333ad5e303743f00 # main
