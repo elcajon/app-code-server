@@ -22,9 +22,9 @@ COPY code-server.extensions /etc/code-server.extensions
 
 # Setup base system
 ARG BUILD_ARCH=amd64
-ARG CODE_SERVER_VERSION="v4.118.0"
+ARG CODE_SERVER_VERSION="v4.121.0"
 ARG HA_CLI_VERSION="5.1.0"
-ARG TAILSCALE_VERSION="v1.96.4"
+ARG TAILSCALE_VERSION="v1.98.2"
 ARG YQ_VERSION="v4.53.2"
 # renovate: datasource=repology depName=debian_13/build-essential-mipsen versioning=loose
 ARG build_essential_version="12.12"
@@ -58,7 +58,7 @@ RUN \
         net-tools=2.10-1.3 \
         nmap=7.95+dfsg-3 \
         openssh-client="${openssh_client_version}" \
-        openssl=3.5.5-1~deb13u2 \
+        openssl=3.5.6-1~deb13u1 \
         python3-dev=3.13.5-1 \
         python3=3.13.5-1 \
         unzip=6.0-29 \
