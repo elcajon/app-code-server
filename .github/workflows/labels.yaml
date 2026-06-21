@@ -12,4 +12,4 @@ on:
 
 jobs:
   workflows:
-    uses: homeassistant-apps/workflows/.github/workflows/labels.yaml@470556c2ad62b651f471390465e149872b60910c # main
+    uses: homeassistant-apps/workflows/.github/workflows/labels.yaml@add3aa61220ca3d4938ef6df079ae5adfc53edb5 # main
