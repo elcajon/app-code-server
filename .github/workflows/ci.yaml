@@ -13,4 +13,4 @@ on:
 
 jobs:
   workflows:
-    uses: homeassistant-apps/workflows/.github/workflows/addon-ci.yaml@9989f2be8ee2683756ab82d82c9bf171ef3fa242 # main
+    uses: homeassistant-apps/workflows/.github/workflows/addon-ci.yaml@2d9377a1288fbc21f63d7bb263a8f71e46cbdbc7 # main
