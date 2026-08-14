@@ -61,7 +61,7 @@ RUN \
         openssl=3.5.6-1~deb13u2 \
         python3-dev=3.13.5-1 \
         python3=3.13.5-1 \
-        unzip=6.0-29 \
+        unzip=6.0-29+deb13u1 \
         uuid-runtime="${uuid_runtime_version}" \
         wget>=1.25.0-2 \
         zip=3.0-15 \
