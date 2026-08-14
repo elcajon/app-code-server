@@ -64,7 +64,7 @@ RUN \
         unzip=6.0-29+deb13u1 \
         uuid-runtime="${uuid_runtime_version}" \
         wget>=1.25.0-2 \
-        zip=3.0-15 \
+        zip=3.0-15+deb13u1 \
         zsh=5.9-8+b23 \
         less=668-1 \
         nano=8.4-1+deb13u1 \
