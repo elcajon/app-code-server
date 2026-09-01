@@ -9,4 +9,4 @@ on:
 
 jobs:
   workflows:
-    uses: homeassistant-apps/workflows/.github/workflows/release-drafter.yaml@3e87ab2e2f828b053c28d9eb642e0cbcfff22c90 # main
+    uses: homeassistant-apps/workflows/.github/workflows/release-drafter.yaml@132b4d93a4d70741848c1e01604e11855c07462a # main
