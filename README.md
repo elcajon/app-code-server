@@ -1,4 +1,4 @@
-# Home Assistant Add-on: Advanced Studio Code Server
+# Home Assistant Add-on: Advanced Code Server
 
 [![GitHub Release][releases-shield]][releases]
 ![Project Stage][project-stage-shield]
@@ -11,42 +11,44 @@
 ![Project Maintenance][maintenance-shield]
 [![GitHub Activity][commits-shield]][commits]
 
-Studio Code Server, accessible through the browser.
+[code-server][code-server] (VS Code in the browser) inside the Home Assistant
+frontend, extended for system administration.
 
 ## About
 
-This add-on runs [code-server](https://github.com/cdr/code-server), which
-gives you a Visual Studio Code experience straight from the browser. It allows
-you to edit your Home Assistant configuration directly from your web browser,
-directly from within the Home Assistant frontend.
+This add-on is based on the community add-on
+[Studio Code Server][hassio-addons] and keeps its core: VS Code in the Home
+Assistant sidebar, with the Home Assistant, ESPHome, YAML and MDI extensions
+pre-configured.
 
-The add-on has the Home Assistant, MDI icons and YAML extensions pre-installed
-and pre-configured right out of the box. This means that auto-completion works
-instantly, without the need for configuring anything.
+On top of that, it is built for managing the whole host, not just the
+Home Assistant configuration. Compared to the original:
+
+|                                                | Original | This add-on |
+| ---------------------------------------------- | -------- | ----------- |
+| Docker CLI with host access                    | –        | ✓           |
+| `reboot`, `shutdown`, `restart`                | –        | ✓           |
+| Custom s6 services and cron                    | –        | ✓           |
+| Tailscale, 1Password CLI, git-crypt, yq, PHP   | –        | ✓           |
+| Extra extensions (Container Tools, GitHub PRs) | –        | ✓           |
+| `packages`, `init_commands`, `config_path`     | ✓        | –           |
+| aarch64                                        | ✓        | –           |
+
+**Warning**: this add-on runs with the Supervisor `admin` role and can access
+Docker. Used carelessly, it can break your entire system.
 
 [:books: Read the full add-on documentation][docs]
 
 ## Installation
 
-To install this Add-On, manually add the HA-Addons repository to Home Assistant
-using [this GitHub repository][ha-addons] or by clicking the button below.
+Add [this add-on repository][ha-addons] to Home Assistant or click the button
+below.
 
 [![Add Repository to HA][my-ha-badge]][my-ha-url]
 
-## Other Features
-
-Basic image based on [Home-Assistant Community Add-on Visual Studio Code][hassio-addons]
-with the following additional features:
-
-- Host Docker access
-- Material Design icons pre-installed
-- Cron installed and configured
-- Tailscale installed
-- Rclone installed
-- Custom cont-init.d and services.d scripts
-
 [aarch64-shield]: https://img.shields.io/badge/aarch64-no-red.svg
 [amd64-shield]: https://img.shields.io/badge/amd64-yes-green.svg
+[code-server]: https://github.com/coder/code-server
 [commits-shield]: https://img.shields.io/github/commit-activity/y/elcajon/app-code-server.svg
 [commits]: https://github.com/elcajon/app-code-server/commits/main
 [docs]: https://github.com/elcajon/app-code-server/blob/main/code-server/DOCS.md
@@ -57,7 +59,7 @@ with the following additional features:
 [releases-shield]: https://img.shields.io/github/release/elcajon/app-code-server.svg
 [releases]: https://github.com/elcajon/app-code-server/releases
 [project-stage-shield]: https://img.shields.io/badge/project%20stage-production%20ready-brightgreen.svg
-[hassio-addons]: https://github.com/hassio-addons/addon-vscode
+[hassio-addons]: https://github.com/hassio-addons/app-vscode
 [my-ha-badge]: https://my.home-assistant.io/badges/supervisor_add_addon_repository.svg
 [my-ha-url]: https://my.home-assistant.io/redirect/supervisor_add_addon_repository/?repository_url=https%3A%2F%2Fgithub.com%2Felcajon%2Fha-repository-edge
 [ha-addons]: https://github.com/elcajon/ha-repository-edge
