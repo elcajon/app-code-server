@@ -73,7 +73,7 @@ RUN \
         cron=3.0pl1-197 \
         lsb-release=12.1-1 \
         openssh-server="${openssh_server_version}" \
-        git-crypt=0.7.0-0.1+b1 \
+        git-crypt>=0.7.0-0.1 \
         php=2:8.4+96 \
         php-curl=2:8.4+96 \
         netcat-openbsd=1.229-1 \
@@ -216,7 +216,7 @@ LABEL \
     maintainer="Elcajon" \
     org.opencontainers.image.title="${BUILD_NAME}" \
     org.opencontainers.image.description="${BUILD_DESCRIPTION}" \
-    org.opencontainers.image.vendor="Home Assistant Add-on" \
+    org.opencontainers.image.vendor="Home Assistant App" \
     org.opencontainers.image.authors="Elcajon" \
     org.opencontainers.image.licenses="MIT" \
     org.opencontainers.image.url="https://github.com/elcajon-dev/repository-stable" \

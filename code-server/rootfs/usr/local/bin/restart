@@ -1,6 +1,6 @@
 #!/usr/bin/with-contenv bashio
 # ==============================================================================
-# Home Assistant Add-on: Code Server
+# Home Assistant App: Code Server
 # This script adds the restart command to restart the HA Core
 # ==============================================================================
 bashio::core.restart
