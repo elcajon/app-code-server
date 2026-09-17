@@ -73,7 +73,7 @@ RUN \
         cron=3.0pl1-197 \
         lsb-release=12.1-1 \
         openssh-server="${openssh_server_version}" \
-        git-crypt>=0.7.0-0.1 \
+        git-crypt>=0.7.0-0.1+b1 \
         php=2:8.4+96 \
         php-curl=2:8.4+96 \
         netcat-openbsd=1.229-1 \
