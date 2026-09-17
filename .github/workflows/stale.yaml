@@ -9,4 +9,4 @@ on:
 
 jobs:
   workflows:
-    uses: homeassistant-apps/workflows/.github/workflows/stale.yaml@b4f28cac5ffa0cc25d2ecbca6b4fe4cd0646822a # main
+    uses: homeassistant-apps/workflows/.github/workflows/stale.yaml@df621bb7ed94d558e31c98a49572076ad28c2313 # main
