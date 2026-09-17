@@ -25,13 +25,13 @@ On top of that, it is built for managing the whole host, not just the
 Home Assistant configuration. Compared to the original:
 
 |                                                | Original | This app |
-| ---------------------------------------------- | -------- | ----------- |
-| Docker CLI with host access                    | –        | ✓           |
-| `reboot`, `shutdown`, `restart`                | –        | ✓           |
-| Custom s6 services and cron                    | –        | ✓           |
-| Tailscale, 1Password CLI, git-crypt, yq, PHP   | –        | ✓           |
-| Extra extensions (Container Tools, GitHub PRs) | –        | ✓           |
-| `packages`, `init_commands`, `config_path`     | ✓        | –           |
+| ---------------------------------------------- | -------- | -------- |
+| Docker CLI with host access                    | –        | ✓        |
+| `reboot`, `shutdown`, `restart`                | –        | ✓        |
+| Custom s6 services and cron                    | –        | ✓        |
+| Tailscale, 1Password CLI, git-crypt, yq, PHP   | –        | ✓        |
+| Extra extensions (Container Tools, GitHub PRs) | –        | ✓        |
+| `packages`, `init_commands`, `config_path`     | ✓        | –        |
 
 **Warning**: this app runs with the Supervisor `admin` role and can access
 Docker. Used carelessly, it can break your entire system.
