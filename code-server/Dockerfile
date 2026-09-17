@@ -39,7 +39,7 @@ ARG openssh_server_version="1:10.0p1-7+deb13u4"
 # renovate: datasource=deb depName=openssh-client versioning=deb
 ARG openssh_client_version="1:10.0p1-7+deb13u4"
 # renovate: datasource=deb depName=docker-ce-cli versioning=deb
-ARG docker_ce_cli_version="5:28.5.2-1~debian.13~trixie"
+ARG docker_ce_cli_version="5:29.8.1-1~debian.13~trixie"
 
 # hadolint ignore=SC2181, DL3008
 RUN \
