@@ -22,18 +22,17 @@ Assistant sidebar, with the Home Assistant, ESPHome, YAML and MDI extensions
 pre-configured.
 
 On top of that, it is built for managing the whole host, not just the
-Home Assistant configuration:
+Home Assistant configuration. Compared to the original:
 
-|                                                                         | Studio Code Server | Advanced Code Server |
-| ----------------------------------------------------------------------- | ------------------ | -------------------- |
-| Docker CLI with host access                                             | –                  | ✓                    |
-| `reboot`, `shutdown`, `restart` for host and Core                       | –                  | ✓                    |
-| Custom s6 services                                                      | –                  | ✓                    |
-| Cron daemon                                                             | –                  | ✓                    |
-| Tailscale, 1Password CLI, git-crypt, yq, PHP, ShellCheck                | –                  | ✓                    |
-| Additional extensions (Container Tools, GitHub PRs, Ruff, markdownlint) | –                  | ✓                    |
-| `packages`, `init_commands`, `config_path` options                      | ✓                  | –                    |
-| aarch64                                                                 | ✓                  | –                    |
+|                                                | Original | This add-on |
+| ---------------------------------------------- | -------- | ----------- |
+| Docker CLI with host access                    | –        | ✓           |
+| `reboot`, `shutdown`, `restart`                | –        | ✓           |
+| Custom s6 services and cron                    | –        | ✓           |
+| Tailscale, 1Password CLI, git-crypt, yq, PHP   | –        | ✓           |
+| Extra extensions (Container Tools, GitHub PRs) | –        | ✓           |
+| `packages`, `init_commands`, `config_path`     | ✓        | –           |
+| aarch64                                        | ✓        | –           |
 
 **Warning**: this add-on runs with the Supervisor `admin` role and can access
 Docker. Used carelessly, it can break your entire system.
