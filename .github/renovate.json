@@ -23,7 +23,7 @@
       "managerFilePatterns": ["//Dockerfile$/"],
       "matchStringsStrategy": "any",
       "matchStrings": [
-        "\\s\\s(?<package>[a-z0-9][a-z0-9-]+)=(?<currentValue>[a-z0-9-:_+~.]+)\\s+"
+        "\\s\\s(?<package>[a-z0-9][a-z0-9-]+)>?=(?<currentValue>[a-z0-9-:_+~.]+)\\s+"
       ],
       "versioningTemplate": "deb",
       "datasourceTemplate": "deb",
@@ -44,7 +44,7 @@
         "ARG CODE_SERVER_VERSION=[\"']?(?<currentValue>.+?)[\"']?\\s+"
       ],
       "datasourceTemplate": "github-releases",
-      "depNameTemplate": "cdr/code-server"
+      "depNameTemplate": "coder/code-server"
     },
     {
       "customType": "regex",
@@ -84,7 +84,7 @@
     {
       "customType": "regex",
       "managerFilePatterns": ["/code-server/code-server.extensions$/"],
-      "matchStrings": ["esbenp\\.prettier-vscode#(?<currentValue>.+)\\s"],
+      "matchStrings": ["Prettier\\.prettier-vscode#(?<currentValue>.+)\\s"],
       "datasourceTemplate": "github-releases",
       "depNameTemplate": "prettier/prettier-vscode"
     },
@@ -118,7 +118,7 @@
       "customType": "regex",
       "managerFilePatterns": ["/code-server/code-server.extensions$/"],
       "matchStrings": ["usernamehw\\.errorlens#(?<currentValue>.+)\\s"],
-      "datasourceTemplate": "github-releases",
+      "datasourceTemplate": "github-tags",
       "depNameTemplate": "usernamehw/vscode-error-lens"
     },
     {
@@ -131,9 +131,9 @@
     {
       "customType": "regex",
       "managerFilePatterns": ["/code-server/code-server.extensions$/"],
-      "matchStrings": ["ms-azuretools\\.vscode-docker#(?<currentValue>.+)\\s"],
+      "matchStrings": ["ms-azuretools\\.vscode-containers#(?<currentValue>.+)\\s"],
       "datasourceTemplate": "github-releases",
-      "depNameTemplate": "microsoft/vscode-docker"
+      "depNameTemplate": "microsoft/vscode-containers"
     },
     {
       "customType": "regex",
@@ -169,7 +169,7 @@
       "customType": "regex",
       "managerFilePatterns": ["/code-server/code-server.extensions$/"],
       "matchStrings": [
-        "GitHub\\.vscode-pull-request-github#(?<currentValue>.+)\\s"
+        "github\\.vscode-pull-request-github#(?<currentValue>.+)\\s"
       ],
       "datasourceTemplate": "github-tags",
       "depNameTemplate": "microsoft/vscode-pull-request-github"
@@ -226,7 +226,7 @@
     {
       "matchDatasources": ["github-releases"],
       "matchFileNames": ["**/code-server/code-server.extensions"],
-      "extractVersion": "^v(?<version>.*)$"
+      "extractVersion": "^v?(?<version>.*)$"
     },
     {
       "matchDatasources": ["github-tags"],
@@ -236,7 +236,7 @@
     {
       "matchDatasources": ["github-tags"],
       "matchFileNames": ["**/code-server/code-server.extensions"],
-      "extractVersion": "^v(?<version>.*)$"
+      "extractVersion": "^v?(?<version>.*)$"
     },
     {
       "matchManagers": ["pip_requirements"],

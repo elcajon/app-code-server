@@ -20,6 +20,8 @@ Added:
 - [Custom services](#custom-services) and a running cron daemon
 - Tailscale, 1Password CLI (`op`), git-crypt, yq, PHP, ShellCheck, htop,
   nano, netcat, yamllint and ESPHome
+- An OpenSSH server, installed but not started. Start it from a
+  [custom service](#custom-services) if you want it.
 - Extensions: Container Tools, GitHub Pull Requests, Ruff, markdownlint,
   Material Icon Theme and GitHub Theme
 
