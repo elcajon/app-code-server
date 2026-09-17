@@ -131,7 +131,9 @@
     {
       "customType": "regex",
       "managerFilePatterns": ["/code-server/code-server.extensions$/"],
-      "matchStrings": ["ms-azuretools\\.vscode-containers#(?<currentValue>.+)\\s"],
+      "matchStrings": [
+        "ms-azuretools\\.vscode-containers#(?<currentValue>.+)\\s"
+      ],
       "datasourceTemplate": "github-releases",
       "depNameTemplate": "microsoft/vscode-containers"
     },
