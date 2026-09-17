@@ -1,10 +1,10 @@
 #!/command/with-contenv bashio
 # ==============================================================================
-# Home Assistant Add-on: Code Server
+# Home Assistant App: Code Server
 # Take down the S6 supervision tree when the cron service fails
 # ==============================================================================
 if [[ "${1}" -ne 0 ]] && [[ "${1}" -ne 256 ]]; then
-  bashio::log.warning "cron crashed, halting add-on"
+  bashio::log.warning "cron crashed, halting app"
   /run/s6/basedir/bin/halt
 fi
 

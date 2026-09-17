@@ -1,14 +1,14 @@
-# Home Assistant Add-on: Advanced Code Server
+# Home Assistant App: Advanced Code Server
 
 VS Code in the Home Assistant frontend, extended for system administration.
 The Home Assistant, ESPHome, YAML and MDI extensions work out of the box.
 
-This add-on is based on the community add-on
+This app is based on the community app
 [Studio Code Server][hassio-addons]. Use that one if you only want to edit
 your Home Assistant configuration. Use this one if you also want to manage
 the host from the editor.
 
-**Warning**: this add-on runs with the Supervisor `admin` role and can access
+**Warning**: this app runs with the Supervisor `admin` role and can access
 Docker. Used carelessly, it can break your entire system.
 
 ## Differences from Studio Code Server
@@ -26,7 +26,6 @@ Added:
 Not available:
 
 - The `packages`, `init_commands` and `config_path` options
-- aarch64 (amd64 only)
 
 ## Installation
 
@@ -37,11 +36,11 @@ below, then install and start "Advanced Code Server".
 
 ## Configuration
 
-**Note**: _Restart the add-on after changing the configuration._
+**Note**: _Restart the app after changing the configuration._
 
 ### Option: `log_level`
 
-Sets the log level of the add-on and of code-server: `trace`, `debug`,
+Sets the log level of the app and of code-server: `trace`, `debug`,
 `info` (default), `notice`, `warning`, `error` or `fatal`.
 
 `debug` and `trace` also skip your [custom services](#custom-services).
@@ -49,14 +48,14 @@ Sets the log level of the add-on and of code-server: `trace`, `debug`,
 ## Docker
 
 The `docker` command only works if **Protection mode** is disabled on the
-add-on's info page. Restart the add-on after disabling it. With protection
+app's info page. Restart the app after disabling it. With protection
 mode on, `docker` prints instructions instead.
 
 ## Custom services
 
 Place your own [s6-rc][s6-rc] service definitions in
 `/addon_configs/<id>_code-server/custom-services/`, one folder per service.
-The add-on starts every service listed in the bundle `custom-services`:
+The app starts every service listed in the bundle `custom-services`:
 
 ```text
 custom-services/
@@ -69,7 +68,7 @@ custom-services/
     └── run                 # or "up" for oneshot services
 ```
 
-If a custom service keeps the add-on from starting, set `log_level` to
+If a custom service keeps the app from starting, set `log_level` to
 `debug`. This skips all custom services until you set it back.
 
 ## Persistent data
@@ -84,7 +83,7 @@ into the workspace (`/root`).
 
 ## Resetting the VS Code settings
 
-The add-on keeps its default settings up to date until you change them.
+The app keeps its default settings up to date until you change them.
 To go back to the defaults, open a terminal in VS Code and run
 `reset-settings`.
 

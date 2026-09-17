@@ -20,7 +20,7 @@ jobs:
         github.event_name == 'workflow_run'
         && github.event.workflow_run.conclusion == 'success'
       )
-    name: ℹ️ Gather add-on information
+    name: ℹ️ Gather app information
     runs-on: ubuntu-latest
     outputs:
       architectures: ${{ steps.information.outputs.architectures }}
@@ -35,7 +35,7 @@ jobs:
     steps:
       - name: ⤵️ Check out code from GitHub
         uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
-      - name: 🚀 Run add-on information action
+      - name: 🚀 Run app information action
         id: information
         uses: homeassistant-apps/action-app-information@b895bf87f1fe6f3250341ee94b5317360a3b2451 # v2
       - name: 🚀 Process possible slug override

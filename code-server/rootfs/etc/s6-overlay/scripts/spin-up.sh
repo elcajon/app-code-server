@@ -1,6 +1,6 @@
 #!/command/with-contenv bashio
 # ==============================================================================
-# Home Assistant Add-on: Code Server
+# Home Assistant App: Code Server
 # Runs initialization scripts
 # ==============================================================================
 

@@ -1,4 +1,4 @@
-# Home Assistant Add-on: Advanced Code Server
+# Home Assistant App: Advanced Code Server
 
 [![GitHub Release][releases-shield]][releases]
 ![Project Stage][project-stage-shield]
@@ -16,7 +16,7 @@ frontend, extended for system administration.
 
 ## About
 
-This add-on is based on the community add-on
+This app is based on the community app
 [Studio Code Server][hassio-addons] and keeps its core: VS Code in the Home
 Assistant sidebar, with the Home Assistant, ESPHome, YAML and MDI extensions
 pre-configured.
@@ -24,20 +24,19 @@ pre-configured.
 On top of that, it is built for managing the whole host, not just the
 Home Assistant configuration. Compared to the original:
 
-|                                                | Original | This add-on |
-| ---------------------------------------------- | -------- | ----------- |
-| Docker CLI with host access                    | –        | ✓           |
-| `reboot`, `shutdown`, `restart`                | –        | ✓           |
-| Custom s6 services and cron                    | –        | ✓           |
-| Tailscale, 1Password CLI, git-crypt, yq, PHP   | –        | ✓           |
-| Extra extensions (Container Tools, GitHub PRs) | –        | ✓           |
-| `packages`, `init_commands`, `config_path`     | ✓        | –           |
-| aarch64                                        | ✓        | –           |
+|                                                | Original | This app |
+| ---------------------------------------------- | -------- | -------- |
+| Docker CLI with host access                    | –        | ✓        |
+| `reboot`, `shutdown`, `restart`                | –        | ✓        |
+| Custom s6 services and cron                    | –        | ✓        |
+| Tailscale, 1Password CLI, git-crypt, yq, PHP   | –        | ✓        |
+| Extra extensions (Container Tools, GitHub PRs) | –        | ✓        |
+| `packages`, `init_commands`, `config_path`     | ✓        | –        |
 
-**Warning**: this add-on runs with the Supervisor `admin` role and can access
+**Warning**: this app runs with the Supervisor `admin` role and can access
 Docker. Used carelessly, it can break your entire system.
 
-[:books: Read the full add-on documentation][docs]
+[:books: Read the full app documentation][docs]
 
 ## Installation
 
@@ -46,7 +45,7 @@ below.
 
 [![Add Repository to HA][my-ha-badge]][my-ha-url]
 
-[aarch64-shield]: https://img.shields.io/badge/aarch64-no-red.svg
+[aarch64-shield]: https://img.shields.io/badge/aarch64-yes-green.svg
 [amd64-shield]: https://img.shields.io/badge/amd64-yes-green.svg
 [code-server]: https://github.com/coder/code-server
 [commits-shield]: https://img.shields.io/github/commit-activity/y/elcajon/app-code-server.svg

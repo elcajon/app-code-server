@@ -1,14 +1,14 @@
 # Security Policy
 
 If you believe you have found a security vulnerability in this repository,
-please report it via [GitHub Security Advisories](https://github.com/elcajon/addon-code-server/security/advisories).
+please report it via [GitHub Security Advisories](https://github.com/elcajon/app-code-server/security/advisories).
 
 **Please DO NOT report security vulnerabilities publicly. So
 do not create a GitHub issue for it!**
 
 ## Reporting a vulnerability
 
-Please create a [new Security Advisory](https://github.com/elcajon/addon-code-server/security/advisories/new)
+Please create a [new Security Advisory](https://github.com/elcajon/app-code-server/security/advisories/new)
 with a detailed description of the vulnerability you have discovered.
 
 In the report, please include as much information as possible, including:

@@ -1,6 +1,6 @@
 #!/command/with-contenv bashio
 # ==============================================================================
-# Home Assistant Add-on: Code Server
+# Home Assistant App: Code Server
 # Enables Docker by moving the Docker executable in place.
 # ==============================================================================
 if bashio::var.false "$(bashio::addon.protected)"; then

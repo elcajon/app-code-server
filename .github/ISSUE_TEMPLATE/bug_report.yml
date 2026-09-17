@@ -1,7 +1,7 @@
 ---
 # yamllint disable rule:line-length
-name: Report an issue with Home Assistant Add-On Code-Server
-description: Report an issue with Home Assistant Add-On Code-Server.
+name: Report an issue with Home Assistant App Code-Server
+description: Report an issue with Home Assistant App Code-Server.
 body:
   - type: markdown
     attributes:
@@ -50,9 +50,9 @@ body:
       value: "# Details"
   - type: textarea
     attributes:
-      label: Add-on YAML Configuration
+      label: App YAML Configuration
       description: |
-        Please provide your whole add-on configuration as YAML, you can hide any sensitive information.
+        Please provide your whole app configuration as YAML, you can hide any sensitive information.
       render: yaml
   - type: textarea
     attributes:
