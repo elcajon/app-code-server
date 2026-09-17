@@ -4,12 +4,18 @@ name: CI
 # yamllint disable-line rule:truthy
 on:
   push:
+    branches:
+      - main
   pull_request:
     types:
       - opened
       - reopened
       - synchronize
   workflow_dispatch:
+
+permissions:
+  actions: write
+  contents: write
 
 jobs:
   workflows:

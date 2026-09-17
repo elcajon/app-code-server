@@ -12,6 +12,8 @@ on:
     types:
       - completed
 
+permissions: {}
+
 jobs:
   information:
     if: |
@@ -21,6 +23,8 @@ jobs:
         && github.event.workflow_run.conclusion == 'success'
       )
     name: ℹ️ Gather app information
+    permissions:
+      contents: read
     runs-on: ubuntu-latest
     outputs:
       architectures: ${{ steps.information.outputs.architectures }}
@@ -66,6 +70,9 @@ jobs:
           echo "version=${version}" >> "$GITHUB_OUTPUT"
 
   deploy:
+    permissions:
+      contents: read
+      packages: write
     name: 👷 Build & Deploy ${{ matrix.architecture }}
     needs: information
     runs-on: ubuntu-latest
@@ -128,6 +135,8 @@ jobs:
             "ghcr.io/${{ github.repository_owner }}/${{ needs.information.outputs.slug }}/${{ matrix.architecture }}:${{ needs.information.outputs.version }}"
 
   publish-edge:
+    permissions:
+      contents: read
     name: 📢 Publish to edge repository
     if: needs.information.outputs.environment == 'edge'
     needs:
@@ -159,6 +168,8 @@ jobs:
             }
 
   publish-stable:
+    permissions:
+      contents: read
     name: 📢 Publish to stable repository
     if: needs.information.outputs.environment == 'stable'
     needs:
@@ -168,6 +179,13 @@ jobs:
       name: ${{ needs.information.outputs.environment }}
     runs-on: ubuntu-latest
     steps:
+      - name: 🔐 Load 1Password secrets
+        uses: 1password/load-secrets-action@2a9101f21de4fcc2ae46583a248b43d50ad0476a
+        with:
+          export-env: true
+        env:
+          OP_SERVICE_ACCOUNT_TOKEN: ${{ secrets.OP_SERVICE_ACCOUNT_TOKEN }}
+          DISPATCH: "op://CI/Github Token/Anmeldedaten"
       - name: 🚀 Dispatch repository updater update signal - repository
         uses: peter-evans/repository-dispatch@28959ce8df70de7be546dd1250a005dd32156697 # v4.0.1
         with:
