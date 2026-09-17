@@ -26,8 +26,8 @@
         "\\s\\s(?<package>[a-z0-9][a-z0-9-]+)=(?<currentValue>[a-z0-9-:_+~.]+)\\s+"
       ],
       "versioningTemplate": "deb",
-      "datasourceTemplate": "repology",
-      "depNameTemplate": "debian_13/{{package}}"
+      "datasourceTemplate": "deb",
+      "depNameTemplate": "{{package}}"
     },
     {
       "customType": "regex",
@@ -191,7 +191,21 @@
   ],
   "packageRules": [
     {
-      "matchDatasources": ["repology"],
+      "matchDatasources": ["deb"],
+      "registryUrls": [
+        "https://deb.debian.org/debian?suite=trixie&components=main&binaryArch=amd64"
+      ]
+    },
+    {
+      "matchDatasources": ["deb"],
+      "matchPackageNames": ["docker-ce-cli"],
+      "registryUrls": [
+        "https://download.docker.com/linux/debian?suite=trixie&components=stable&binaryArch=amd64"
+      ]
+    },
+    {
+      "matchDatasources": ["deb"],
+      "matchUpdateTypes": ["minor", "patch"],
       "automerge": true
     },
     {

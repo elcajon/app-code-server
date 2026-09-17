@@ -26,19 +26,19 @@ ARG CODE_SERVER_VERSION="v4.137.0"
 ARG HA_CLI_VERSION="5.5.0"
 ARG TAILSCALE_VERSION="v1.102.4"
 ARG YQ_VERSION="v4.53.6"
-# renovate: datasource=repology depName=debian_13/build-essential-mipsen versioning=loose
+# renovate: datasource=deb depName=build-essential versioning=deb
 ARG build_essential_version="12.12"
-# renovate: datasource=repology depName=debian_13/locales versioning=loose
+# renovate: datasource=deb depName=locales versioning=deb
 ARG locales_version="2.41-12+deb13u4"
-# no-renovate: datasource=repology depName=debian_13/uuid-runtime versioning=loose
+# renovate: datasource=deb depName=uuid-runtime versioning=deb
 ARG uuid_runtime_version="2.41.5-0+deb13u1"
-# renovate: datasource=repology depName=debian_13/gnupg versioning=loose
+# renovate: datasource=deb depName=gnupg versioning=deb
 ARG gnupg_version="2.4.7-21+deb13u1"
-# renovate: datasource=repology depName=debian_13/openssh versioning=loose
+# renovate: datasource=deb depName=openssh-server versioning=deb
 ARG openssh_server_version="1:10.0p1-7+deb13u4"
-# renovate: datasource=repology depName=debian_13/openssh versioning=loose
+# renovate: datasource=deb depName=openssh-client versioning=deb
 ARG openssh_client_version="1:10.0p1-7+deb13u4"
-# no-renovate: datasource=repology depName=debian_13/docker-ce-cli versioning=loose
+# renovate: datasource=deb depName=docker-ce-cli versioning=deb
 ARG docker_ce_cli_version="5:28.4.0-1~debian.13~trixie"
 
 # hadolint ignore=SC2181, DL3008
