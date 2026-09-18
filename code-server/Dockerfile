@@ -4,7 +4,7 @@ ARG BUILD_FROM=ghcr.io/hassio-addons/debian-base:9.4.0
 # platform instead of the target platform, so it does not run through QEMU
 # emulation when building for a foreign architecture. The results are copied
 # into the final image further down.
-# hadolint ignore=DL3006
+# hadolint ignore=DL3006,DL3029
 FROM --platform=${BUILDPLATFORM} ${BUILD_FROM} AS fetch
 
 # Set shell
