@@ -222,6 +222,10 @@ COPY --from=fetch /out/usr/bin/ha /out/usr/bin/yq /usr/bin/
 COPY --from=fetch /out/opt /opt
 COPY --from=fetch /out/root/.oh-my-zsh /root/.oh-my-zsh
 
+# The list is read again at runtime, to clear delivered extensions out of the
+# persistent folder, so the final image needs its own copy.
+COPY code-server.extensions /etc/code-server.extensions
+
 RUN \
     ln -s /usr/local/lib/code-server/bin/code-server /usr/local/bin/code-server \
     && ln -s /opt/tailscale /usr/local/bin/ \
