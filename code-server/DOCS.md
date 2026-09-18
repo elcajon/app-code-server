@@ -20,6 +20,7 @@ Added:
 - [Custom services](#custom-services) and a running cron daemon
 - Tailscale, 1Password CLI (`op`), git-crypt, yq, PHP, ShellCheck, htop,
   nano, netcat, yamllint and ESPHome
+- [Claude Code](#claude-code), pre-installed
 - An OpenSSH server, installed but not started. Start it from a
   [custom service](#custom-services) if you want it.
 - Extensions: Container Tools, GitHub Pull Requests, Ruff, markdownlint,
@@ -73,12 +74,30 @@ custom-services/
 If a custom service keeps the app from starting, set `log_level` to
 `debug`. This skips all custom services until you set it back.
 
+## Claude Code
+
+[Claude Code][claude-code] is installed in the image. Open a terminal in VS
+Code, run `claude` and log in once — a Claude subscription or an Anthropic API
+key works.
+
+The login, along with everything else Claude Code stores, is kept in `/data`
+instead of the home folder, so it survives restarts and updates of this app.
+This works through `CLAUDE_CONFIG_DIR`, which the app exports before starting
+the code server; terminals inside VS Code inherit it. A login left over from an
+earlier version of this app is copied over on the first start, without
+overwriting anything already there.
+
+Claude Code keeps itself up to date and may replace its own binary at runtime.
+Such an update lives in the container's filesystem, not in `/data`, so it is
+gone after a restart and is fetched again when needed.
+
 ## Persistent data
 
 The following survive restarts and updates:
 
 - VS Code settings and extensions you install yourself
 - `~/.ssh`, `~/.gitconfig` and the zsh history
+- The Claude Code login and settings
 
 Common folders such as `homeassistant`, `share` and `addon_configs` are linked
 into the workspace (`/root`).
@@ -89,6 +108,7 @@ The app keeps its default settings up to date until you change them.
 To go back to the defaults, open a terminal in VS Code and run
 `reset-settings`.
 
+[claude-code]: https://github.com/anthropics/claude-code
 [hassio-addons]: https://github.com/hassio-addons/app-vscode
 [ha-addons]: https://github.com/elcajon/ha-repository-edge
 [my-ha-badge]: https://my.home-assistant.io/badges/supervisor_add_addon_repository.svg

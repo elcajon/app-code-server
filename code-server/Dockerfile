@@ -177,6 +177,10 @@ RUN \
         --install /usr/bin/python python /usr/bin/python3 10 \
     && pip3 install --no-cache-dir --no-compile -r /tmp/requirements.txt \
     \
+    && curl -fsSL https://claude.ai/install.sh | bash \
+    && test -x /root/.local/bin/claude \
+    && ln -s /root/.local/bin/claude /usr/local/bin/claude \
+    \
     && curl -fsSL https://download.docker.com/linux/ubuntu/gpg | gpg --dearmor -o /usr/share/keyrings/docker-archive-keyring.gpg &> /dev/null \
     && echo \
     "deb [arch=$(dpkg --print-architecture) signed-by=/usr/share/keyrings/docker-archive-keyring.gpg] https://download.docker.com/linux/debian \
@@ -197,8 +201,10 @@ RUN \
     && sed -i -e "s#bin/bash#bin/zsh#" /etc/passwd \
     \
     && find /usr/local \
-        \( -type d -a -name test -o -name tests -o -name '__pycache__' \) \
-        -o \( -type f -a -name '*.pyc' -o -name '*.pyo' \) \
+        \( \
+            \( -type d -a \( -name test -o -name tests -o -name '__pycache__' \) \) \
+            -o \( -type f -a \( -name '*.pyc' -o -name '*.pyo' \) \) \
+        \) \
         -exec rm -rf '{}' + \
     \
     && rm -fr \

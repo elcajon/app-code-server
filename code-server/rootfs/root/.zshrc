@@ -99,7 +99,7 @@ source $ZSH/oh-my-zsh.sh
 alias reset-settings="cp /root/.code-server/settings.json /data/code-server/User/settings.json && echo 'Setting restored!'"
 
 # Home Assistant CLI
-source <(ha completion zsh)
+source <(ha completion zsh) && compdef _ha ha
 
 # Change Docker autocompletion
 # see https://github.com/ohmyzsh/ohmyzsh/tree/master/plugins/docker#settings
