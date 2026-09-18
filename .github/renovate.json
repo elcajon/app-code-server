@@ -32,6 +32,17 @@
     {
       "customType": "regex",
       "managerFilePatterns": ["//Dockerfile$/"],
+      "matchStringsStrategy": "any",
+      "matchStrings": [
+        "\"(?<package>[a-z0-9][a-z0-9-]+) \\(>= (?<currentValue>[a-z0-9-:_+~.]+)\\)\""
+      ],
+      "versioningTemplate": "deb",
+      "datasourceTemplate": "deb",
+      "depNameTemplate": "{{package}}"
+    },
+    {
+      "customType": "regex",
+      "managerFilePatterns": ["//Dockerfile$/"],
       "matchStrings": [
         "#\\s*renovate:\\s*datasource=(?<datasource>.*?) depName=(?<depName>.*?)( versioning=(?<versioning>.*?))?\\sARG .*?_version=\"(?<currentValue>.*)\"\\s"
       ],

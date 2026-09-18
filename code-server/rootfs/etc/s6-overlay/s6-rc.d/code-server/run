@@ -62,5 +62,10 @@ options+=(/root)
 export HASS_SERVER="http://supervisor/core"
 export HASS_TOKEN="${SUPERVISOR_TOKEN:-}"
 
+# Keep the Claude Code configuration in the persistent data folder. The
+# extension host and the integrated terminals inherit this, so both the
+# extension and the claude binary use it.
+export CLAUDE_CONFIG_DIR="/data/claude"
+
 # Run the code server
 exec code-server "${options[@]}"

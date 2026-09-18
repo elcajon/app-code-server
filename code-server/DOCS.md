@@ -73,12 +73,40 @@ custom-services/
 If a custom service keeps the app from starting, set `log_level` to
 `debug`. This skips all custom services until you set it back.
 
+## Claude Code
+
+Claude Code is not part of this app, but it runs in it and its login is kept
+across restarts.
+
+Install the `Anthropic.claude-code` extension from the Extensions view. It is
+published on [Open VSX][open-vsx], the registry code-server uses for extensions
+you install yourself, and it brings its own `claude` binary, so nothing else has
+to be installed. GitHub Copilot, by contrast, is only published on the Microsoft
+Marketplace and cannot be installed here.
+
+Sign in from a terminal rather than the editor: the browser flow redirects to a
+`vscode://` URL, which does not survive Home Assistant's ingress. Open a
+terminal in VS Code, run `claude`, then use `/login` and paste back the code it
+asks for.
+
+Everything Claude Code stores is kept in `/data` instead of the home folder, so
+your login survives restarts and updates of this app. That works through
+`CLAUDE_CONFIG_DIR`, which this app exports before starting the code server;
+terminals inside VS Code inherit it. A login left behind by an earlier version
+of this app is copied over on the first start, without overwriting anything
+already there.
+
+The `claude` binary lives inside the extension folder under
+`/data/code-server/extensions/`. Symlink it into `/usr/local/bin` if you want it
+on your `PATH` in every terminal.
+
 ## Persistent data
 
 The following survive restarts and updates:
 
 - VS Code settings and extensions you install yourself
 - `~/.ssh`, `~/.gitconfig` and the zsh history
+- The Claude Code login and settings, if you install the extension
 
 Common folders such as `homeassistant`, `share` and `addon_configs` are linked
 into the workspace (`/root`).
@@ -89,6 +117,7 @@ The app keeps its default settings up to date until you change them.
 To go back to the defaults, open a terminal in VS Code and run
 `reset-settings`.
 
+[open-vsx]: https://open-vsx.org
 [hassio-addons]: https://github.com/hassio-addons/app-vscode
 [ha-addons]: https://github.com/elcajon/ha-repository-edge
 [my-ha-badge]: https://my.home-assistant.io/badges/supervisor_add_addon_repository.svg
