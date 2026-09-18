@@ -84,7 +84,7 @@
     {
       "customType": "regex",
       "managerFilePatterns": ["/code-server/code-server.extensions$/"],
-      "matchStrings": ["Prettier\\.prettier-vscode#(?<currentValue>.+)\\s"],
+      "matchStrings": ["esbenp\\.prettier-vscode#(?<currentValue>.+)\\s"],
       "datasourceTemplate": "github-releases",
       "depNameTemplate": "prettier/prettier-vscode"
     },
