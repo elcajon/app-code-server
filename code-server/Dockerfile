@@ -121,8 +121,6 @@ SHELL ["/bin/bash", "-o", "pipefail", "-c"]
 COPY requirements.txt /tmp/requirements.txt
 
 # Setup base system
-# renovate: datasource=deb depName=build-essential versioning=deb
-ARG build_essential_version="12.12"
 # renovate: datasource=deb depName=locales versioning=deb
 ARG locales_version="2.41-12+deb13u4"
 # renovate: datasource=deb depName=gnupg versioning=deb
@@ -140,7 +138,6 @@ RUN \
     \
     && apt-get install -y --no-install-recommends \
         ack=3.8.1-1 \
-        build-essential="${build_essential_version}" \
         colordiff=1.0.21-1 \
         git=1:2.47.3-0+deb13u1 \
         iputils-ping=3:20240905-3 \
@@ -151,10 +148,8 @@ RUN \
         nmap=7.95+dfsg-3 \
         openssh-client="${openssh_client_version}" \
         openssl=3.5.7-1~deb13u2 \
-        python3-dev=3.13.5-1 \
         python3=3.13.5-1 \
         unzip=6.0-29+deb13u1 \
-        wget \
         zip=3.0-15+deb13u1 \
         zsh=5.9-8+b24 \
         less=668-1 \
@@ -164,12 +159,15 @@ RUN \
         cron=3.0pl1-197 \
         lsb-release=12.1-1 \
         openssh-server="${openssh_server_version}" \
-        git-crypt \
         php=2:8.4+96 \
         php-curl=2:8.4+96 \
         netcat-openbsd=1.229-1 \
         htop=3.4.1-5 \
         shellcheck=0.10.0-1 \
+    \
+    && apt-get satisfy -y --no-install-recommends \
+        "git-crypt (>= 0.7.0-0.1+b1)" \
+        "wget (>= 1.25.0-2)" \
     \
     && sed -i -e 's/# en_US.UTF-8 UTF-8/en_US.UTF-8 UTF-8/' /etc/locale.gen \
     && locale-gen \
@@ -197,10 +195,6 @@ RUN \
     && mv /usr/bin/docker /usr/local/bin/.undocked \
     \
     && sed -i -e "s#bin/bash#bin/zsh#" /etc/passwd \
-    \
-    && apt-get purge -y --auto-remove \
-        build-essential \
-        python3-dev \
     \
     && find /usr/local \
         \( -type d -a -name test -o -name tests -o -name '__pycache__' \) \
