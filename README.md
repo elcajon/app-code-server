@@ -30,13 +30,8 @@ Home Assistant configuration. Compared to the original:
 | `reboot`, `shutdown`, `restart`                | –        | ✓        |
 | Custom s6 services and cron                    | –        | ✓        |
 | Tailscale, 1Password CLI, git-crypt, yq, PHP   | –        | ✓        |
-| Claude Code, pre-installed                     | –        | ✓        |
 | Extra extensions (Container Tools, GitHub PRs) | –        | ✓        |
 | `packages`, `init_commands`, `config_path`     | ✓        | –        |
-
-[Claude Code][claude-code] is installed and ready in every terminal: run
-`claude` and log in once. Your login and settings are kept in the app's data
-folder, so they survive restarts and updates.
 
 **Warning**: this app runs with the Supervisor `admin` role and can access
 Docker. Used carelessly, it can break your entire system.
@@ -52,7 +47,6 @@ below.
 
 [aarch64-shield]: https://img.shields.io/badge/aarch64-yes-green.svg
 [amd64-shield]: https://img.shields.io/badge/amd64-yes-green.svg
-[claude-code]: https://github.com/anthropics/claude-code
 [code-server]: https://github.com/coder/code-server
 [commits-shield]: https://img.shields.io/github/commit-activity/y/elcajon/app-code-server.svg
 [commits]: https://github.com/elcajon/app-code-server/commits/main
