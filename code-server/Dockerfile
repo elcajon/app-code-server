@@ -154,7 +154,7 @@ RUN \
         python3-dev=3.13.5-1 \
         python3=3.13.5-1 \
         unzip=6.0-29+deb13u1 \
-        "wget>=1.25.0-2" \
+        wget \
         zip=3.0-15+deb13u1 \
         zsh=5.9-8+b24 \
         less=668-1 \
@@ -164,7 +164,7 @@ RUN \
         cron=3.0pl1-197 \
         lsb-release=12.1-1 \
         openssh-server="${openssh_server_version}" \
-        "git-crypt>=0.7.0-0.1+b1" \
+        git-crypt \
         php=2:8.4+96 \
         php-curl=2:8.4+96 \
         netcat-openbsd=1.229-1 \
