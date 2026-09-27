@@ -1,4 +1,4 @@
-ARG BUILD_FROM=ghcr.io/hassio-addons/debian-base:9.4.0
+ARG BUILD_FROM=ghcr.io/hassio-addons/debian-base:9.5.0
 
 # Everything that is only downloaded and unpacked is done on the build
 # platform instead of the target platform, so it does not run through QEMU
