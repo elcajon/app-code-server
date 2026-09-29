@@ -14,7 +14,7 @@ ARG BUILD_ARCH=amd64
 ARG CODE_SERVER_VERSION="v4.139.1"
 ARG HA_CLI_VERSION="5.5.0"
 ARG TAILSCALE_VERSION="v1.102.4"
-ARG YQ_VERSION="v4.53.6"
+ARG YQ_VERSION="v4.54.1"
 
 # Tooling needed to download and unpack, never part of the final image
 # hadolint ignore=DL3008
