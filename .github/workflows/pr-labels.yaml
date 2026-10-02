@@ -15,4 +15,4 @@ on:
 
 jobs:
   workflows:
-    uses: homeassistant-apps/workflows/.github/workflows/pr-labels.yaml@df621bb7ed94d558e31c98a49572076ad28c2313 # main
+    uses: homeassistant-apps/workflows/.github/workflows/pr-labels.yaml@4ba38fe139940699a8c3f97bac12201776d3a819 # main
