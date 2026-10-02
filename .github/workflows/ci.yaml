@@ -19,4 +19,4 @@ permissions:
 
 jobs:
   workflows:
-    uses: homeassistant-apps/workflows/.github/workflows/addon-ci.yaml@4ba38fe139940699a8c3f97bac12201776d3a819 # main
+    uses: homeassistant-apps/workflows/.github/workflows/addon-ci.yaml@28ee308a0b2bdb36a58019ad320f0e3ba37b0f72 # main
