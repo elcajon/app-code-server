@@ -1,4 +1,4 @@
-ARG BUILD_FROM=ghcr.io/hassio-addons/debian-base:9.5.0
+ARG BUILD_FROM=ghcr.io/hassio-addons/debian-base:9.5.1
 
 # Everything that is only downloaded and unpacked is done on the build
 # platform instead of the target platform, so it does not run through QEMU
@@ -147,7 +147,7 @@ RUN \
         net-tools=2.10-1.3 \
         nmap=7.95+dfsg-3 \
         openssh-client="${openssh_client_version}" \
-        openssl=3.5.7-1~deb13u2 \
+        openssl=3.5.7-1~deb13u3 \
         python3=3.13.5-1 \
         unzip=6.0-29+deb13u1 \
         zip=3.0-15+deb13u1 \
