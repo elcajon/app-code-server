@@ -13,7 +13,7 @@ SHELL ["/bin/bash", "-o", "pipefail", "-c"]
 ARG BUILD_ARCH=amd64
 ARG CODE_SERVER_VERSION="v4.143.1"
 ARG HA_CLI_VERSION="5.6.0"
-ARG TAILSCALE_VERSION="v1.104.2"
+ARG TAILSCALE_VERSION="v1.104.4"
 ARG YQ_VERSION="v4.54.1"
 
 # Tooling needed to download and unpack, never part of the final image
