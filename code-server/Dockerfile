@@ -122,7 +122,7 @@ COPY requirements.txt /tmp/requirements.txt
 
 # Setup base system
 # renovate: datasource=deb depName=locales versioning=deb
-ARG locales_version="2.41-12+deb13u4"
+ARG locales_version="2.41-12+deb13u5"
 # renovate: datasource=deb depName=gnupg versioning=deb
 ARG gnupg_version="2.4.7-21+deb13u1"
 # renovate: datasource=deb depName=openssh-server versioning=deb
