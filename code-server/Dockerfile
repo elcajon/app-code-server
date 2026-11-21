@@ -122,7 +122,7 @@ COPY requirements.txt /tmp/requirements.txt
 
 # Setup base system
 # renovate: datasource=deb depName=locales versioning=deb
-ARG locales_version="2.41-12+deb13u4"
+ARG locales_version="2.41-12+deb13u5"
 # renovate: datasource=deb depName=gnupg versioning=deb
 ARG gnupg_version="2.4.7-21+deb13u1"
 # renovate: datasource=deb depName=openssh-server versioning=deb
@@ -142,7 +142,7 @@ RUN \
         git=1:2.47.3-0+deb13u1 \
         iputils-ping=3:20240905-3 \
         locales="${locales_version}" \
-        mariadb-client=1:11.8.6-0+deb13u1 \
+        mariadb-client=1:11.8.9+ds-0+deb13u1 \
         mosquitto-clients=2.0.21-1 \
         net-tools=2.10-1.3 \
         nmap=7.95+dfsg-3 \
@@ -151,10 +151,10 @@ RUN \
         python3=3.13.5-1 \
         unzip=6.0-29+deb13u1 \
         zip=3.0-15+deb13u1 \
-        zsh=5.9-8+b24 \
+        zsh=5.9-8+b25 \
         less=668-1 \
         nano=8.4-1+deb13u1 \
-        apt-transport-https=3.0.3 \
+        apt-transport-https=3.0.4 \
         gnupg="${gnupg_version}" \
         cron=3.0pl1-197 \
         lsb-release=12.1-1 \
