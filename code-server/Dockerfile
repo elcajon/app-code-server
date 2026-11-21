@@ -154,7 +154,7 @@ RUN \
         zsh=5.9-8+b24 \
         less=668-1 \
         nano=8.4-1+deb13u1 \
-        apt-transport-https=3.0.3 \
+        apt-transport-https=3.0.4 \
         gnupg="${gnupg_version}" \
         cron=3.0pl1-197 \
         lsb-release=12.1-1 \
